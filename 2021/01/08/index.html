@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- title -->
+
+
+    
+
+<!-- keywords -->
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Ignax">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Ignax">
+    
+        <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content="">
+    <meta name="description" content="笔者曾认为，将三岛由纪夫而非太宰治作为”Favorite Writer”是一个明智的选择。 而事实上她错了。三岛由纪夫的成分更加复杂，他与政治敏感问题有不小的牵连。为了定义中文语境中的三岛由纪夫，我们必须欲抑先扬：作为文学家，他写作了许多优秀的作品，但是，他的思想有严重缺陷。我们不说问题而是说缺陷。在目前的中文语境下，三岛由纪夫晚年的行为是一种错误。 秉持对任何思想一视同仁的态度，笔者将在本文中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="烈日下的虚无——浅谈三岛由纪夫">
+<meta property="og:url" content="http://example.com/2021/01/08/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="笔者曾认为，将三岛由纪夫而非太宰治作为”Favorite Writer”是一个明智的选择。 而事实上她错了。三岛由纪夫的成分更加复杂，他与政治敏感问题有不小的牵连。为了定义中文语境中的三岛由纪夫，我们必须欲抑先扬：作为文学家，他写作了许多优秀的作品，但是，他的思想有严重缺陷。我们不说问题而是说缺陷。在目前的中文语境下，三岛由纪夫晚年的行为是一种错误。 秉持对任何思想一视同仁的态度，笔者将在本文中">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-07T15:16:52.000Z">
+<meta property="article:modified_time" content="2024-01-23T09:58:04.833Z">
+<meta property="article:author" content="Ignax">
+<meta property="article:tag" content="三岛由纪夫">
+<meta name="twitter:card" content="summary">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="/assets/skull.svg">
+    
+    <title>烈日下的虚无——浅谈三岛由纪夫 · TD</title>
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+    (function (w) {
+        'use strict'
+        // rel=preload support test
+        if (!w.loadCSS) {
+            w.loadCSS = function () {}
+        }
+        // define on the loadCSS obj
+        var rp = (loadCSS.relpreload = {})
+        // rel=preload feature support test
+        // runs once and returns a function for compat purposes
+        rp.support = (function () {
+            var ret
+            try {
+                ret = w.document.createElement('link').relList.supports('preload')
+            } catch (e) {
+                ret = false
+            }
+            return function () {
+                return ret
+            }
+        })()
+
+        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+        // then change that media back to its intended value on load
+        rp.bindMediaToggle = function (link) {
+            // remember existing media attr for ultimate state, or default to 'all'
+            var finalMedia = link.media || 'all'
+
+            function enableStylesheet() {
+                link.media = finalMedia
+            }
+
+            // bind load handlers to enable media
+            if (link.addEventListener) {
+                link.addEventListener('load', enableStylesheet)
+            } else if (link.attachEvent) {
+                link.attachEvent('onload', enableStylesheet)
+            }
+
+            // Set rel and non-applicable media type to start an async request
+            // note: timeout allows this to happen async to let rendering continue in IE
+            setTimeout(function () {
+                link.rel = 'stylesheet'
+                link.media = 'only x'
+            })
+            // also enable media after 3 seconds,
+            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+            setTimeout(enableStylesheet, 3000)
+        }
+
+        // loop through link elements in DOM
+        rp.poly = function () {
+            // double check this to prevent external calls from running
+            if (rp.support()) {
+                return
+            }
+            var links = w.document.getElementsByTagName('link')
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i]
+                // qualify links to those with rel=preload and as=style attrs
+                if (
+                    link.rel === 'preload' &&
+                    link.getAttribute('as') === 'style' &&
+                    !link.getAttribute('data-loadcss')
+                ) {
+                    // prevent rerunning on link
+                    link.setAttribute('data-loadcss', true)
+                    // bind listeners to toggle media back
+                    rp.bindMediaToggle(link)
+                }
+            }
+        }
+
+        // if unsupported, run the polyfill
+        if (!rp.support()) {
+            // run once at least
+            rp.poly()
+
+            // rerun poly on an interval until onload
+            var run = w.setInterval(rp.poly, 500)
+            if (w.addEventListener) {
+                w.addEventListener('load', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            } else if (w.attachEvent) {
+                w.attachEvent('onload', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            }
+        }
+
+        // commonjs
+        if (typeof exports !== 'undefined') {
+            exports.loadCSS = loadCSS
+        } else {
+            w.loadCSS = loadCSS
+        }
+    })(typeof global !== 'undefined' ? global : this)
+</script>
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20211217" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="/css/dark.css?v=20211217" as="style">
+    <link rel="stylesheet" href="/css/dark.css">
+    <link rel="stylesheet" href="/css/mobile.css?v=20211217" media="(max-width: 960px)">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js?v=20211217" as="script">
+    <link rel="preload" href="/scripts/dark.js?v=20211217" as="script">
+    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
+    <!-- algolia -->
+    
+    <!-- 百度统计  -->
+    
+    <!-- Google tag (gtag.js) -->
+    
+
+<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ == undefined) {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js" />')
+        }
+    </script>
+    
+        <body class="post-body">
+    
+        <!-- header -->
+        <header class="header header-mobile">
+    <!-- top read progress line -->
+    <div class="header-element">
+        <div class="read-progress"></div>
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        
+            <div class="header-sidebar-menu">
+        
+            
+                <div style="padding-left: 1px;">&#xe775;</div>
+            
+        </div>
+    </div>
+    <!-- header actions -->
+    <div class="header-actions">
+        <!-- theme mode switch button -->
+        <span class="header-theme-btn header-element">
+            <i class="fas fa-adjust"></i>
+        </span>
+        <!-- back to home page text -->
+        <span class="home-link header-element">
+            <a href=/>T.D.</a>
+        </span>
+    </div>
+    <!-- toggle banner for post layout -->
+    
+        
+            <div class="banner">
+        
+            <div class="blog-title header-element">
+                <a href="/">T.D.</a>
+            </div>
+            <div class="post-title header-element">
+                <a href="#" class="post-name">烈日下的虚无——浅谈三岛由纪夫</a>
+            </div>
+        </div>
+    
+</header>
+
+        <!-- fixed footer -->
+        <footer class="footer-fixed">
+    <!-- back to top button -->
+    <div class="footer-fixed-element">
+        
+            <div class="back-top back-top-hidden">
+        
+        
+            <div>&#xe639;</div>
+        
+        </div>
+    </div>
+</footer>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="site-intro" style="
+
+
+
+
+
+
+
+    height:50vh;
+
+">
+    
+    <!-- 主页  -->
+    
+        
+    <!-- 404页  -->
+    
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+                烈日下的虚无——浅谈三岛由纪夫
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+                
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页 meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="三岛由纪夫">三岛由纪夫</a>
+    
+</div>
+
+                
+                <!-- 文章字数统计 -->
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">3.1k</span>Reading time: <span class="post-count reading-time">10 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2021/01/08</span>
+                    <!-- busuanzi -->
+                    
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+            <script>
+  // get user agent
+  function getBrowserVersions() {
+    var u = window.navigator.userAgent
+    return {
+      userAgent: u,
+      trident: u.indexOf('Trident') > -1, //IE内核
+      presto: u.indexOf('Presto') > -1, //opera内核
+      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+      iPad: u.indexOf('iPad') > -1, //是否为iPad
+      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
+    }
+  }
+  var browser = {
+    versions: getBrowserVersions(),
+  }
+  console.log('userAgent: ' + browser.versions.userAgent)
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded')
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document
+        .getElementsByClassName('intro-title')[0]
+        .classList.add('intro-fade-in')
+      document
+        .getElementsByClassName('intro-subtitle')[0]
+        .classList.add('intro-fade-in')
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in')
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb() {
+    if (browser.versions.uc) {
+      console.log('UCBrowser')
+      fontLoaded()
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular'],
+        },
+        loading: function () {
+          // 所有字体开始加载
+          // console.log('font loading');
+        },
+        active: function () {
+          // 所有字体已渲染
+          fontLoaded()
+        },
+        inactive: function () {
+          // 字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout')
+          fontLoaded()
+        },
+        timeout: 5000, // Set the timeout to two seconds
+      })
+    }
+  }
+
+  function asyncErr() {
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0]
+    o.src = u
+    if (cb) {
+      o.addEventListener(
+        'load',
+        function (e) {
+          cb(null, e)
+        },
+        false
+      )
+    }
+    if (err) {
+      o.addEventListener(
+        'error',
+        function (e) {
+          err(null, e)
+        },
+        false
+      )
+    }
+    s.parentNode.insertBefore(o, s)
+  }
+
+  var asyncLoadWithFallBack = function (arr, success, reject) {
+    var currReject = function () {
+      reject()
+      arr.shift()
+      if (arr.length) async(arr[0], success, currReject)
+    }
+
+    async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack(
+    [
+      'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
+      "/lib/webfontloader.min.js",
+    ],
+    asyncCb,
+    asyncErr
+  )
+</script>
+
+            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+            <div class="container container-unloaded">
+                <main class="main post-page">
+    <article class="article-entry">
+        <blockquote>
+<p>笔者曾认为，将三岛由纪夫而非太宰治作为”Favorite Writer”是一个明智的选择。</p>
+<p>而事实上她错了。三岛由纪夫的成分更加复杂，他与政治敏感问题有不小的牵连。为了定义中文语境中的三岛由纪夫，我们必须欲抑先扬：作为文学家，他写作了许多优秀的作品，但是，他的思想有严重<strong>缺陷</strong>。我们不说问题而是说缺陷。在目前的中文语境下，三岛由纪夫晚年的行为是一种<strong>错误</strong>。</p>
+<p>秉持对任何思想一视同仁的态度，笔者将在本文中尽可能还原她眼中的三岛由纪夫。她在资料中读到的内容表示，也许三岛的信念早就死在了日本战败的那一天——于照射着树木的，八月的烈阳中。</p>
+</blockquote>
+<p><br/><span id="more"></span></p>
+<p>我们很容易在对三岛由纪夫的介绍中发现，他是个不折不扣的天才。</p>
+<p>学习院初等科（可理解为小学）时便在学院内部刊物上发表俳句和诗歌，十二岁发表人生第一篇散文，十三岁则是小说，十五岁发表诗集，十六岁时他的作品受到国文老师的赏识并推荐他投稿杂志《文艺文化》，“三岛由纪夫”一名出现在大众的视野中。</p>
+<p>十九岁时三岛以第一名的成绩从学习院高等科毕业，所作《百花怒放的森林》印刷出版，并获荐进入东京帝国大学法学部就读。1945年，二十岁的三岛由纪夫本应应征入伍，因为军医将他的感冒误判为肺炎被遣送回乡。那批征召的士兵几乎全数命丧菲律宾，躲过了死神屠刀的三岛在1945年过得并不如意，他的国家战败了，友人亲人相继死去，可以说是受尽打击。</p>
+<p>二十一岁的三岛由纪夫结识了川端康成，在川端的引荐下正式步入文坛。大学毕业后工作一年，他终于决定以专职作家的身份致力于写作。1951年，二十六岁的三岛发表描写男同性恋者的《禁色》，同年年底获得了朝日新闻特别通讯员的身份启程环游世界，于希腊所获得的西方美学经验直接影响了使他进入创作生涯鼎盛时期的《潮骚》*(Shiosai&#x2F;The Sound of Waves, 1954)*的精神内核。</p>
+<p>1960年，三岛由纪夫开始构思超长篇小说，即他的绝笔之作《丰饶之海》四部曲。本作将佛教轮回转生的概念化为现实，作为连接四本书间剧情的线索，并用一定的篇幅讲述佛教理论。为此三岛走访寺庙，前往佛教国家，系列于1965年开始在《新潮》杂志连载，直至1971年完结。</p>
+<p>1970年11月25日，在交付《天人五衰》后，三岛由纪夫以复兴武士道精神和保卫天皇为由发动政变，无人响应后切腹。</p>
+<br/>
+
+<p>作为三岛由纪夫人生中具有里程碑意义的作品，《潮骚》的故事非常简单：青年渔民新治与船主的女儿初江秘密相爱，而他们的亲密举止被仰慕新治的千代子目击并告知垂涎初江的安夫，安夫将两人的亲昵传谣成交媾，两人的关系遂遭船主照吉的反对。然而，完全切断两人联系的船主发觉女儿心意已决，便暗中安排了一场门当户对的富家子弟安夫和青年渔民新治的试炼——在出海船只遇险时，新治只身涉险转危为安，得到了照吉的认可。</p>
+<p>三岛将《潮骚》的背景歌岛视作自己心中的世外桃源。全篇轻松明丽的环境描写和富有活力的人物塑造与他一贯的风格也是大有出入——三岛由纪夫向来推崇死带来的极致冲击和美感，而《潮骚》是为生命和青春献上的颂歌。传统日式美和简单直接的西式爱情在这部作品中得到了完美的结合，这也是《潮骚》大获成功并迅速走进国际视野的原因。</p>
+<br/>
+
+<p>松本鹤雄这样评价三岛由纪夫的文学特征：“日本的浪漫派精神、贵族情趣和对王朝文化的憧憬的结合，转化为天皇神格化。”</p>
+<p>于1964年发表的中篇小说《忧国》*(Yukoku)*可说是三岛由纪夫对自身死亡的预言。这是一名军官陷入友谊与忠诚的矛盾中决定切腹自尽的故事：由于新婚，他没有参与友人发动的政变（即二·二六事变），而后来他被天皇命令讨伐政变成员。小说将极致的性的欢愉作为死前最后一幕，仅从艺术鉴赏的角度——他们的爱情于血泊之中照出别样的光芒。</p>
+<p>1966年，在采访中谈起死亡的三岛由纪夫说：“要说怕不怕死，我若是患病之身便会怕死。（我）最厌恶癌症，只是想一下就觉得可怕。在一间间窄小的病房里死去，如同蜜蜂死在蜂巢里。无论是生病，还是交通事故，这些现代的死法都毫无<strong>戏剧性</strong>可言。” </p>
+<p>壮烈的，美的死亡一直是三岛笔下不断追求的至福，《丰饶之海》中，松枝清显、饭沼勋都轰轰烈烈地死在二十岁，前者为爱情，后者为“大义”。三岛同样亲自执导并出演了时长29分钟的黑白电影《忧国》，影片以英文书写的各章梗概作为隔断，分幕展现了故事的情节，其中，性爱与死亡被着重表现。</p>
+<p>同样于1966年接受的采访中，三岛由纪夫表示，“到我二十岁为止的这二十年间，军事当局的一部分极端势力在战争中遭到那样毁灭般的失败。打那之后二十年虽然一直看起来一副太平盛世的样子，这既归功于日本工业化的发展，同时也反映出在精神层面上没有任何足以称之为文明重建的意识。”</p>
+<p>1970年，带领“盾会”杀进自卫队东部方面总监部的三岛由纪夫绑架其总监，以发表演说作为条件站在了自卫队前，于众人因无法理解而发出的议论和哄笑声中呼吁自卫队发动政变。事件最终以三岛的切腹自尽结束。</p>
+<p>在《日本人的生死观》中，对三岛由纪夫的思想进行了严厉的批评，“毋宁说，三岛所探寻的‘真正的日本’ ，是他青年时代那个好战的国家日本，而非其他”，并指出，“为了全面恢复文化，必须恢复天皇原来的机制，三岛如是说。从这个意义来看，他不仅像日本浪漫派那样主张天皇与诗歌的结合，而是如同军国主义那样，把天皇与军队直接结合起来了。”</p>
+<p>有马赖义*(Arima Yorichika)*表示，三岛由纪夫写于《忧国》以后的小说，我不承认它们是文学。余华则是尖锐地评论道，在《忧国》里，三岛由纪夫对武山自戕的描叙充满刊热情和欢乐，在这狂欢似的描叙里，三岛由纪夫迷失了自己，到最后已经不再是三岛由纪夫在叙述《忧国》，而是《忧国》在叙述三岛由纪夫了。</p>
+<p>余华认为，三岛由纪夫混淆了写作与生活的界限。</p>
+<p>依然是1966年的那段采访，三岛由纪夫谈及日本战败当时的场景：“战争结束的时候，我在亲戚家里听到了停战诏书。当时我们一家人被疏散到东京郊外的某个地方，对于停战诏书，心里满是感动达到极点带来的空虚，实在难以想象自己一直生活的世界会往什么方向发展。战争失败后，这个世界本该走向毁灭——但是周围的树木依旧沐浴在夏天强烈的阳光下。因为目睹那番景象时身处平常的家庭之中，身边有家人，还有矮脚饭桌，完全被日常生活的点点滴滴包围，所以实在令人感到不可思议。”</p>
+<p>这样的场景同样出现在了《天人五衰》的最后三段中。</p>
+<p>“这是个闲雅而宽敞明亮的院子，不曾经过匠心的雕琢。像是捻念珠似的蝉声统御着这个地方。</p>
+<p>此外毫无声息，真是寂寥的极境。这个院子里一无所有。本多寻思：自己来到了一个既没有记忆，也没有任何东西的所在。</p>
+<p>庭院静悄悄地沐浴在夏天的烈日下……”</p>
+<p>于《战争时期日本精神史》中，鹤见俊辅总结道，当国体观念也像一小片头皮屑般从头上掉下来后，就只剩下肉体而已。1925年生，六岁起便接受日本的战争状态的三岛由纪夫而言，这种精神上的虚无感带来的打击是不可磨灭的。而不同于屈服“肉体主义”的作家，三岛由纪夫挣扎着为自己的人生寻找定义。他说，如果只是为自己而活为自己而死，那么委实称不上坚强，他还说，一旦人类开始思考将生命献诸理想云云，就会立刻对只为自己而活的念头感到兴味索然了，于是自然也会为自己的死觅求一种信念。1951年，麦克阿瑟于讲话中指出，从现代文明的维度来看，日本人就像是十二岁的小孩子。三岛由纪夫死在自卫队军人的哄笑声中，被后人评价为“中二病晚期”，他的观点偏颇到令人感到不可思议的地步。我也许可以说，他所急于觅求的信念永远无法摆脱战败那日所见的烈阳带给他的绝望感：</p>
+<p>他的天塌了，而太阳照常升起，照常刺眼，照常透过树叶将影子斑驳投射于大地。</p>
+<br/>
+
+<p><strong>参考资料</strong></p>
+<p>[1]三岛由纪夫-百度百科：<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%B8%89%E5%B2%9B%E7%94%B1%E7%BA%AA%E5%A4%AB/63135?fr=aladdin#4_1">https://baike.baidu.com/item/%E4%B8%89%E5%B2%9B%E7%94%B1%E7%BA%AA%E5%A4%AB/63135?fr=aladdin#4_1</a></p>
+<p>[2]潮骚-百度百科：<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%BD%AE%E9%AA%9A/1925777?fr=aladdin">https://baike.baidu.com/item/%E6%BD%AE%E9%AA%9A/1925777?fr=aladdin</a></p>
+<p>[3]忧国-百度百科：<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BF%A7%E5%9B%BD/19659798?fr=aladdin">https://baike.baidu.com/item/%E5%BF%A7%E5%9B%BD/19659798?fr=aladdin</a></p>
+<p>[4]丰饶之海-百度百科：<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%B8%B0%E9%A5%B6%E4%B9%8B%E6%B5%B7/5750974?fr=aladdin">https://baike.baidu.com/item/%E4%B8%B0%E9%A5%B6%E4%B9%8B%E6%B5%B7/5750974?fr=aladdin</a></p>
+<p>[5]三岛由纪夫画下文学句号.北京青年报.2014&#x2F;09&#x2F;05[引用日期2021&#x2F;01&#x2F;08]</p>
+<p>[6]三岛由纪夫艺术与人品的背离.中国网.2008&#x2F;01&#x2F;21[引用日期2021&#x2F;01&#x2F;08]</p>
+<p>[7]余华：三岛由纪夫的写作与生活.腾讯文化.2017&#x2F;01&#x2F;05[引用日期2021&#x2F;01&#x2F;08]</p>
+<p>[8]【NHK】三岛由纪夫 (1966年珍贵采访) 自制字幕：BV1Qs411y76H</p>
+<p>[9]三岛由纪夫切腹自杀 NHK放送 1970年：BV1JZ4y1V7ED</p>
+<p>[10]《战争时期日本精神史1931-1945》鹤见俊辅，北京日报出版社</p>
+<p>[11]《创造日本：1853-1964》伊恩·布鲁玛，四川人民出版社</p>
+<br/>
+
+<p><strong>笔者语</strong></p>
+<p>这篇，我写得很痛苦，写完了也就只是写完了而已，不过成就感当然还是有。主要问题是我的积累量不够又想开辟一条看似比较玄乎的路子，自然是没什么内涵。</p>
+<p>希望它能起到一定的娱乐作用。</p>
+<br/>
+
+<p>一股神秘力量把我的斜体格式给打回源代码了，两头标星号的本来应该是个斜体字，我得花点时间看看问题出在哪里。</p>
+
+    </article>
+    <!-- license -->
+    
+        <div class="license-wrapper">
+            <p>Author：<a href="http://example.com">Ignax</a>
+            <p>Link：<a href="http://example.com/2021/01/08/">http://example.com/2021/01/08/</a>
+            <p>Publish date：<a href="http://example.com/2021/01/08/">January 8th 2021, 12:16:52 am</a>
+            <p>Update date：<a href="http://example.com/2021/01/08/">January 23rd 2024, 6:58:04 pm</a>
+            <p>License：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2021/01/17/" title="瓶颈堵塞001:突然开始的欢乐解压向系列作，搞成系列不过是因为这样（笔者认为）更有意思">
+                    <div class="nextTitle">瓶颈堵塞001:突然开始的欢乐解压向系列作，搞成系列不过是因为这样（笔者认为）更有意思</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2021/01/04/" title="《战争时期日本精神史1931-1945》读书笔记（上）">
+                    <div class="prevTitle">《战争时期日本精神史1931-1945》读书笔记（上）</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- comment -->
+    
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
+
+
+            
+
+            
+
+            
+
+            <!-- utteranc评论 -->
+
+
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
+
+
+            
+            
+
+            
+
+        </div>
+    
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    
+    <!-- Mathjax -->
+    
+</main>
+
+                <!-- profile -->
+                
+            </div>
+            <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+        <div class="social">
+            
+    
+        
+            
+                <a href="mailto:nanyibei5074@163.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="/atom.xml" class="iconfont-archer rss" target="_blank" title=rss></a>
+            
+        
+    
+
+
+        </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- website approve for Chinese user -->
+    
+    <!-- 不蒜子  -->
+    
+        <div class="busuanzi-container">
+            
+             
+                <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+            
+        </div>
+    	
+</footer>
+
+        </div>
+        <!-- toc -->
+        
+            <div class="toc-wrapper toc-wrapper-loding" style=
+
+
+
+
+
+
+
+    top:50vh;
+
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                
+            </div>
+        
+        <!-- sidebar -->
+        <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+        <div class="sidebar-panel-archives">
+    <!-- 在 ejs 中将 archive 按照时间排序 -->
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 24
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+        
+            
+            
+            <div class="archive-year"> 2021 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span>
+            <a class="archive-post-title" href="/2021/11/24/">落</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/20</span>
+            <a class="archive-post-title" href="/2021/07/20/">证言</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/26</span>
+            <a class="archive-post-title" href="/2021/05/26/">半夜，意气风发的落水狗、气球和石头</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/02</span>
+            <a class="archive-post-title" href="/2021/05/02/">断弦其五一二三四</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span>
+            <a class="archive-post-title" href="/2021/03/07/">歌者（上）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span>
+            <a class="archive-post-title" href="/2021/03/06/">虚实论：月、月亮和月球</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2021/02/28/">一直打游戏完全不干活这种事也是存在的·2021年3月安排</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/05</span>
+            <a class="archive-post-title" href="/2021/02/05/">《基础天文学》笔记2.1</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/02</span>
+            <a class="archive-post-title" href="/2021/02/02/">2021.2.2背景图片更新</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span>
+            <a class="archive-post-title" href="/2021/01/31/">2021.1月度总结</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/28</span>
+            <a class="archive-post-title" href="/2021/01/28/">瓶颈堵塞002:有关恰克·帕拉尼克</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/27</span>
+            <a class="archive-post-title" href="/2021/01/27/">耶鲁大学心理学导论笔记1-3</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/27</span>
+            <a class="archive-post-title" href="/2021/01/27/">《基础天文学》笔记1.5</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/25</span>
+            <a class="archive-post-title" href="/2021/01/25/">《基础天文学》充满大量私人杂谈的笔记1.2-1.4</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/23</span>
+            <a class="archive-post-title" href="/2021/01/23/">《基础天文学》笔记1.1</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/21</span>
+            <a class="archive-post-title" href="/2021/01/21/">2021.1.21外观设置更新</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/20</span>
+            <a class="archive-post-title" href="/2021/01/20/">戴冯提们的后日谈</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/17</span>
+            <a class="archive-post-title" href="/2021/01/17/">瓶颈堵塞001:突然开始的欢乐解压向系列作，搞成系列不过是因为这样（笔者认为）更有意思</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/08</span>
+            <a class="archive-post-title" href="/2021/01/08/">烈日下的虚无——浅谈三岛由纪夫</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/04</span>
+            <a class="archive-post-title" href="/2021/01/04/">《战争时期日本精神史1931-1945》读书笔记（上）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/04</span>
+            <a class="archive-post-title" href="/2021/01/04/">《战争时期日本精神史1931-1946》读书笔记（上）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span>
+            <a class="archive-post-title" href="/2021/01/03/">四处碰壁的搭建实录</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/02</span>
+            <a class="archive-post-title" href="/2021/01/02/">2021.1.1背景图片更新</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/02</span>
+            <a class="archive-post-title" href="/2021/01/02/">2020.10.7-2020.12.29POME提问箱问答汇总</a>
+        </li>
+    
+    </div>
+</div>
+
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+        
+            <span class="sidebar-tag-name" data-tags="更新">
+                <span class="iconfont-archer">&#xe606;</span>
+                更新
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="月度总结">
+                <span class="iconfont-archer">&#xe606;</span>
+                月度总结
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="随笔">
+                <span class="iconfont-archer">&#xe606;</span>
+                随笔
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="学习">
+                <span class="iconfont-archer">&#xe606;</span>
+                学习
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="记录">
+                <span class="iconfont-archer">&#xe606;</span>
+                记录
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="二创">
+                <span class="iconfont-archer">&#xe606;</span>
+                二创
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="瓶颈堵塞">
+                <span class="iconfont-archer">&#xe606;</span>
+                瓶颈堵塞
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="外观设置">
+                <span class="iconfont-archer">&#xe606;</span>
+                外观设置
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="天文学">
+                <span class="iconfont-archer">&#xe606;</span>
+                天文学
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="三岛由纪夫">
+                <span class="iconfont-archer">&#xe606;</span>
+                三岛由纪夫
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="心理学">
+                <span class="iconfont-archer">&#xe606;</span>
+                心理学
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="提问箱">
+                <span class="iconfont-archer">&#xe606;</span>
+                提问箱
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="日本学">
+                <span class="iconfont-archer">&#xe606;</span>
+                日本学
+            </span>
+        
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="随笔">
+            <span class="iconfont-archer">&#xe60a;</span>
+            随笔
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="笔记">
+            <span class="iconfont-archer">&#xe60a;</span>
+            笔记
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="原创">
+            <span class="iconfont-archer">&#xe60a;</span>
+            原创
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="同人">
+            <span class="iconfont-archer">&#xe60a;</span>
+            同人
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="断弦">
+            <span class="iconfont-archer">&#xe60a;</span>
+            断弦
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="随笔">
+            <span class="iconfont-archer">&#xe60a;</span>
+            随笔
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="二创">
+            <span class="iconfont-archer">&#xe60a;</span>
+            二创
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="系列号21011701">
+            <span class="iconfont-archer">&#xe60a;</span>
+            系列号21011701
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="随便论">
+            <span class="iconfont-archer">&#xe60a;</span>
+            随便论
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="设置">
+            <span class="iconfont-archer">&#xe60a;</span>
+            设置
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="非虚构">
+            <span class="iconfont-archer">&#xe60a;</span>
+            非虚构
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="虚构">
+            <span class="iconfont-archer">&#xe60a;</span>
+            虚构
+        </span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+
+    </div>
+</div>
+
+        <!-- site-meta -->
+        <script>
+    var siteMetaRoot = "/"
+    if (siteMetaRoot === "undefined") {
+        siteMetaRoot = '/'
+    }
+    var siteMeta = {
+        url: "http://example.com",
+        root: siteMetaRoot,
+        author: "Ignax"
+    }
+</script>
+
+        <!-- import experimental options here -->
+        <!-- Custom Font -->
+
+
+        <!-- main func -->
+        <script src="/scripts/main.js?v=20211217"></script>
+        <!-- dark mode -->
+        <script src="/scripts/dark.js?v=20211217"></script>
+        <!-- fancybox -->
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" defer></script>
+        <!-- algolia -->
+        
+        <!-- busuanzi -->
+        
+            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+        
+        <!-- CNZZ -->
+        
+        <!-- async load share.js -->
+        
+            <script src="/scripts/share.js?v=20211217" async></script>
+        
+        <!-- mermaid -->
+        
+    </body>
+</html>
