@@ -214,7 +214,15 @@
     
     <!-- Google tag (gtag.js) -->
     
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());  // 禁止右键菜单
+        document.addEventListener('copy', event => event.preventDefault());        // 禁止复制
+        document.addEventListener('cut', event => event.preventDefault());         // 禁止剪切
+        document.addEventListener('selectstart', event => event.preventDefault()); // 禁止文本选择
+      </script>
+    <meta name="robots" content="noindex, nofollow">
 
+      
 <meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
 </head>
 
